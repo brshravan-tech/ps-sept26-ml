@@ -1,0 +1,145 @@
+Resources:
+
+* Tom M Mitchell - Machine Learning Book
+* Website: Introduction to Statistical Learning
+    * https://www-bcf.usc.edu/~gareth/ISL/
+* Site: http://hamstermap.com/quickmap.php
+* https://www.latlong.net/
+* cricsheet data -> https://cricsheet.org
+* Movies data -> https://grouplens.org (Movie lens data)
+* Orielly Book -> Python for Data Analysis
+* Tom Michelle -> Machine Learning
+
+Machine learning is a specialised field in artificial intelligence?
+
+Deep learning libraries: tensor flow, karas
+
+Definitions:
+* Feature
+    * What we already have
+* Targeted Value
+    * What we want to get
+
+Ex: in a linear expression of "y= mx+c"
+y -> target
+x -> feature
+c -> intercept
+m -> coefficient
+
+Residue -> Error/Difference that we see with the known features and target values
+
+Next step is to look for algorithm which provides least residue among known algorithms for the problem
+
+We can have multiple features for the given problem 
+But note that, not all will affect the same way. (Ex: Number of schools near by a house might be interested only to some people). 
+‘Correlation’ : How does the feature impact the output and at what factor/rate?
+(Note that, Correlation can be negative also. Ex: Number of bars near by house?)
+
+Algorithm needs to take all the features of available data and help us to get the required coefficients for coming up with equation
+Ex: x1,x2,x3… features
+y = m1x1+m2x2+m3x3+…+c
+
+We can have multiple algorithms to help to get above coefficients. Ex: Scikit-learn helps to get this answer
+
+What are we targeting???
+* Input would be 
+    * Data containing features and known target values
+    * What kind of algorithm we want to use (Linear, Regression…)
+* Output would be
+    * To come up with the required equation (Ex: Coefficient values)
+* When the Performance (Sum of residues) improves with different set of data, features improves -> Machine is learning and improving
+
+Definitions:
+* Regression
+    * Even if one of the feature has a stellar performance, other features might pull down the target value towards the mean
+* Prediction / Estimation
+    * Expected target value (Based on the equation) and some error
+Ex: Equation for expected price of house might be returned as 100K from the equation. Ex, We add 10K as error to it. So the Prediction value is 100 + 10 = 110K
+
+* Feature Engineering
+    * To come up with the list of interested features from the known data.
+    * This also includes coming up with new features based on the known details of data.
+
+ML Process:
+
+    Data Acquisition -> Feature Engineering -> Fitting the Model -> Evaluate
+                                                                                                    -> Predict
+
+Definitions:
+* Training Set
+    * Part of known data given to the algorithm for coming up with model
+* Test Set
+    * Part of known data used to evaluate the model derived from Training set
+
+* Root Mean Square Error:
+    * Square root of the mean of the square of the errors
+
+
+Jupyter:
+
+Add below line at the top of the file to enable the autofill (With “Tab” button)
+
+%config IPCompleter.greedy=True
+
+
+Algorithms:
+* Stochastic Gradient Descent (SGD)
+    * How algorithm intelligently picks up weights rather than doing brute force
+    * http://localhost:8888/notebooks/Course/Linear-Regression/01%20-%20Linear%20Regression%20Manual%20Solving.ipynb
+* 
+
+
+Logistic Regression
+
+* Minimize False-Negatives
+
+Random Tree/Forest is better or improved version of Decision Tree
+
+Decision Tree uses ‘gini score’ to pick the features
+
+In general, if the clusters are close together then K-Means/K-Nearest works better. But if there is clear separation between different clusters, Decision tree works better.
+
+
+When data has discrete values, arriving at decision tree is easier
+When data has continuous values, arriving at decision tree is harder
+
+Ex:
+Type of whether to decide whether century is scored or not -> Discrete (Limited type of whether types) -> Decision Tree is good here
+Average of all the bowlers in opposition team to decide whether century is scored or not -> Continuous -> Decision Tree is not good here. K-Nearest might be good here (Navy bias might also be good here… check this???)
+
+
+Final value is categorial -> Logistic, Decision Tree, K-Means/K-Nearest
+Final value is continuous -> Linear
+
+
+
+-> Regression
+-> Classification
+-> Recommendation
+
+
+1. Batch Processing:
+    1. Pre process all the data before hand and show the data/expected value to the user upon receiving data
+        1. Recommendation fits here
+2. Real Time:
+
+Model deployment Environment
+    1. Where we need to process for each data that is receiving rather than relying on some older known data
+
+
+Pickle: For serialising and storing the model
+
+Deployment:
+
+Endpoint:
+* Have a rest API server and model to be loaded and used. -> Model Service Platform (MSP)
+* This can be OnPrem, OnCloud, running as docker
+
+
+Build SDK framework for the models so that models dont need to be exposed outside. Rather SDK can take parameters like correlation,test_size etc… (May be in some JSON format) and use it for building model
+
+=keras library -> For Deep Learning?
+
+* Correlation Filtering
+* Collaborative Filtering
+
